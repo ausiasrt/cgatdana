@@ -15,11 +15,6 @@ run_app:
 
 	wget -r http://127.0.0.1:8050/_dash-component-suites/plotly/package_data/plotly.min.js
 
-	mkdir assets
-	touch assets/.gitkeep
-	git add assets/.gitkeep
-	git commit -m "Add .gitkeep to ensure assets folder exists"
-
 	mv 127.0.0.1:8050 pages_files
 	ls -a pages_files
 	ls -a pages_files/assets
