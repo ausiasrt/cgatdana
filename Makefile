@@ -27,7 +27,9 @@ run_app:
 	find pages_files -type f -exec sed -i.bak 's|assets|ausiasrt/assets|g' {} \;
 
 
-
+	ps -C python -o pid= | xargs kill -9
+	rm -rf 127.0.0.1:8050/
+	rm -rf pages_files/
 	
 	
 
@@ -36,7 +38,5 @@ run_app:
 
 clean_dirs:
 	ls
-	ps -C python -o pid= | xargs kill -9
-	rm -rf 127.0.0.1:8050/
-	rm -rf pages_files/
+	
 	rm -rf joblib
