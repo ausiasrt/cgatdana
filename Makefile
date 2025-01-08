@@ -19,12 +19,14 @@ run_app:
 	ls -a pages_files
 	ls -a pages_files/assets
 
-	find pages_files -exec sed -i.bak 's|_dash-component-suites|ausiasrt\\/_dash-component-suites|g' {} \;
-	find pages_files -exec sed -i.bak 's|_dash-layout|ausiasrt/_dash-layout.json|g' {} \;
-	find pages_files -exec sed -i.bak 's|_dash-dependencies|ausiasrt/_dash-dependencies.json|g' {} \;
-	find pages_files -exec sed -i.bak 's|_reload-hash|ausiasrt/_reload-hash|g' {} \;
-	find pages_files -exec sed -i.bak 's|_dash-update-component|ausiasrt/_dash-update-component|g' {} \;
-	find pages_files -exec sed -i.bak 's|assets|ausiasrt/assets|g' {} \;
+	find pages_files -type f -exec sed -i.bak 's|_dash-component-suites|ausiasrt\\/_dash-component-suites|g' {} \;
+	find pages_files -type f -exec sed -i.bak 's|_dash-layout|ausiasrt/_dash-layout.json|g' {} \;
+	find pages_files -type f -exec sed -i.bak 's|_dash-dependencies|ausiasrt/_dash-dependencies.json|g' {} \;
+	find pages_files -type f -exec sed -i.bak 's|_reload-hash|ausiasrt/_reload-hash|g' {} \;
+	find pages_files -type f -exec sed -i.bak 's|_dash-update-component|ausiasrt/_dash-update-component|g' {} \;
+	find pages_files -type f -exec sed -i.bak 's|assets|ausiasrt/assets|g' {} \;
+
+
 
 	mv pages_files/_dash-layout pages_files/_dash-layout.json
 	mv pages_files/_dash-dependencies pages_files/_dash-dependencies.json
